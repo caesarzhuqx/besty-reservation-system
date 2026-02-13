@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Besty Reservation Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="card">
+        <h1>Reservation Dashboard</h1>
+        <form id="filters" class="filters">
+          <input name="status" placeholder="status: confirmed/modified/cancelled" />
+          <input name="propertyId" placeholder="property id" />
+          <input name="guestId" placeholder="guest id" />
+          <input name="search" placeholder="search name/email/reservation id" />
+          <input name="checkInFrom" type="date" />
+          <input name="checkInTo" type="date" />
+          <button type="submit">Apply Filters</button>
+          <button id="clearBtn" type="button">Clear</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Broadcast Message</h2>
+        <form id="broadcastForm" class="broadcast">
+          <textarea
+            id="broadcastMessage"
+            placeholder="Message for all guests matching current filters"
+            required
+          ></textarea>
+          <button type="submit">Send Broadcast</button>
+        </form>
+        <p id="broadcastStatus"></p>
+      </section>
+
+      <section class="card">
+        <div class="tableHeader">
+          <h2>Reservations</h2>
+          <small id="connectionStatus">SSE: connecting...</small>
+        </div>
+        <div class="tableWrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Reservation</th>
+                <th>Status</th>
+                <th>Property</th>
+                <th>Guest</th>
+                <th>Name</th>
+                <th>Check In</th>
+                <th>Check Out</th>
+                <th>Guests</th>
+                <th>Total</th>
+                <th>Updated</th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
