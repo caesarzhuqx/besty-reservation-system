@@ -1,6 +1,6 @@
 ﻿# Besty Reservation System
 
-Interview project solution focused on:
+This project focused on:
 - webhook ingestion with signature validation
 - PostgreSQL upsert into fixed `reservations` schema
 - real-time reservation dashboard updates
